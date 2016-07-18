@@ -185,9 +185,9 @@ static void on_unsubscribe(struct mosquitto *mosq, void *obj, int message_id)
     if ((self = [super init])) {
         self.clientID = clientId;
         self.port = 1883;
-        self.keepAlive = 60;
-        self.reconnectDelay = 1;
-        self.reconnectDelayMax = 1;
+        self.keepAlive = 10;
+        self.reconnectDelay = 10;
+        self.reconnectDelayMax = 30;
         self.reconnectExponentialBackoff = NO;
 
         self.subscriptionHandlers = [[NSMutableDictionary alloc] init];
